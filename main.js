@@ -9,8 +9,11 @@ var pikePlace = {
 };
 
 pikePlace.calculateCustomersPerHour = function() {
-  var randomCust = Math.floor(Math.random() * (this.max - this.min) + this.min);
+  var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  return randomCust * this.avgCookiesPerSale;
 }
+
+console.log(pikePlace.calculateCustomersPerHour());
 
 var seaTac = {
   name: 'SeaTac Airport',
@@ -20,6 +23,13 @@ var seaTac = {
   cookiesSoldEachHour: [],
 };
 
+seaTac.calculateCustomersPerHour = function() {
+  var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  return randomCust * this.avgCookiesPerSale;
+}
+
+console.log(seaTac.calculateCustomersPerHour());
+
 var seattleCenter = {
   name: 'Seattle Center',
   min: 11,
@@ -27,6 +37,13 @@ var seattleCenter = {
   avgCookiesPerSale: 3.7,
   cookiesSoldEachHour: [],
 };
+
+seattleCenter.calculateCustomersPerHour = function() {
+  var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  return randomCust * this.avgCookiesPerSale;
+}
+
+console.log(seattleCenter.calculateCustomersPerHour());
 
 var capHill = {
   name: 'Capitol Hill',
@@ -36,6 +53,13 @@ var capHill = {
   cookiesSoldEachHour: [],
 };
 
+capHill.calculateCustomersPerHour = function() {
+  var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  return randomCust * this.avgCookiesPerSale;
+}
+
+console.log(capHill.calculateCustomersPerHour());
+
 var alki = {
   name: 'Alki',
   min: 2,
@@ -43,3 +67,12 @@ var alki = {
   avgCookiesPerSale: 4.6,
   cookiesSoldEachHour: [],
 };
+
+alki.calculateCustomersPerHour = function() {
+  var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  return randomCust * this.avgCookiesPerSale;
+}
+
+console.log(alki.calculateCustomersPerHour());
+
+
