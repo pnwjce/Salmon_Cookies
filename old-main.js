@@ -14,14 +14,14 @@ SalmonCookieStore.prototype.calculateCustomersPerHour = function() {
   for(var i = 0; i < 14; i++) {
     var randomCust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
     this.customersPerHour.push(randomCust);
-    console.log('randomCust' + randomCust);
-  }
-};
+//     console.log('randomCust' + randomCust);
+//   }
+// };
 
-SalmonCookieStore.prototype.calculateCookiesSoldEachHour = function() {
-  console.log(this);
-  this.calculateCustomersPerHour();
-  for(var i = 0; i < 14; i++) {
+// SalmonCookieStore.prototype.calculateCookiesSoldEachHour = function() {
+//   console.log(this);
+//   this.calculateCustomersPerHour();
+//   for(var i = 0; i < 14; i++) {
     var cookiesByTheHour = Math.round(this.avgCookiesPerSale * this.customersPerHour[i]);
     this.cookiesSoldEachHour.push(cookiesByTheHour);
     console.log('cookiesByTheHour' + this.cookiesSoldEachHour[i]);
