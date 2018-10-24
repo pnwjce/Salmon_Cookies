@@ -37,7 +37,16 @@ SalmonCookiesStoreConstructor.prototype.renderAsTableRow = function () {
     storeTableRowEl.appendChild(storeTableRowDataEl);
   }
   storeTableEl.appendChild(storeTableRowEl);
+  //header row
+  for(var i = 0; i < 14; i++) {
+    var storeTableHeader = document.createElement('thead');
+    storeTableHeader.textContent = this.hoursOfOperation[i];
+    
+  }
+  storeTableEl.appendChild(storeTableHeader);
 };
+
+
 
 //Declaring my objects
 var pikePlace = new SalmonCookiesStoreConstructor('1st and Pike', 23, 65, 6.3);
@@ -46,6 +55,7 @@ var seattleCenter = new SalmonCookiesStoreConstructor('Seattle Center', 11, 38, 
 var capHill = new SalmonCookiesStoreConstructor('Capitol Hill', 20, 38, 2.3);
 var alki = new SalmonCookiesStoreConstructor('Alki', 2, 16, 4.6);
 
+//locations array
 var locations = [pikePlace, seaTac, seattleCenter, capHill, alki];
 
 for(var i = 0; i < locations.length; i++) {
@@ -59,25 +69,27 @@ seattleCenter.renderAsTableRow();
 capHill.renderAsTableRow();
 alki.renderAsTableRow();
 
+//new store form
+var newLocationForm = document.getElementById('new-store-form');
+var bodyEl = document.getElementById('body');
 
-// var renderHours = function() {
-//   var storeTableEl = document.getElementById('storetable');
-//   var storeTableBodyEl = document.createElement('table');
-//   var storeTableBodyRowEl = document.createElement('tr');
-//   var storeTableBodyHeadEl = document.createElement('th');
-//   storeTableBodyHeadEl.textContent = locations;
-//   storeTableBodyRowEl.appendChild(storeTableBodyHeadEl);
-//   var hoursOfOperation = ['6:00am', '7:00am', '8:00am', '9:00am', '10;00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm']
-//   for(var i = i; i < hoursOfOperation.length[i]; i++) {
-//     storeTableBodyHeadEl = document.createElement('th');
-//     storeTableBodyHeadEl.textContent = hoursOfOperation[i];
-//     storeTableBodyRowEl.appendChild(storeTableBodyHeadEl);
-//   }
 
-//   storeTableBodyRowEl.appendChild(storeTableBodyHeadEl);
-//   storeTableBodyEl.appendChild(storeTableBodyRowEl);
-//   storeTableEl.appendChild(storeTableBodyEl);
-// };
+var newLocationHandler = function(event) {
+  event.preventDefault();
+  event.stopPropagation();
 
-// renderHours();
+  var locationName = event.target['location'].value;
+  var minCustomersHr = event.target['min-customers-hour'].value;
+  var maxCustomersHr = event.target['max-customers-hour'].value;
+  var avgCookiesPerSale = event.target['cookies-per-sale'].value;
 
+  var newLocation = new SalmonCookiesStoreConstructor(locationName, minCustomersHr, maxCustomersHr, avgCookiesPerSale);
+  locations.push(newLocation);
+  
+};
+
+bodyEl.addEventListener('click', function(event){
+  console.log('working?');
+});
+
+newLocationForm.addEventListener('sumbit', newLocationHandler);
