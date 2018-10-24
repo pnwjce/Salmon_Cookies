@@ -29,17 +29,14 @@ SalmonCookiesStoreConstructor.prototype.renderAsTableRow = function () {
   //create header row
   var storeTableHeadEl = document.createElement('th');
   storeTableHeadEl.textContent = this.name;
-  storeTableEl.appendChild(storeTableHeadEl);
+  storeTableRowEl.appendChild(storeTableHeadEl);
   //create row data
-  var storeTableRowDataEl = function () {
-    for(var i = 0; i < 14; i++) {
-      var storeTableRowDataEl = document.createElement('td');
-      storeTableRowDataEl.textContent = this.cookiesSoldEachHour[i];
-      storeTableEl.appendChild(storeTableRowDataEl);
-    }
-  };
-  storeTableRowDataEl();
-
+  for(var i = 0; i < this.cookiesSoldEachHour.length; i++) {
+    var storeTableRowDataEl = document.createElement('td');
+    storeTableRowDataEl.textContent = this.cookiesSoldEachHour[i];
+    storeTableRowEl.appendChild(storeTableRowDataEl);
+  }
+  storeTableEl.appendChild(storeTableRowEl);
 };
 
 //Declaring my objects
