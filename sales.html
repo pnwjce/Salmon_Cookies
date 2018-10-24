@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="salesstyle.css" type="text/css">
 </head>
 
-<body>
+<body id="body">
   <header>
     <img id="header-img" src="./assets/bait-catch-coho-salmon-1058295.jpg" alt="Fresh Caught Salmon">
 
@@ -20,6 +20,30 @@
   </header>
 
     <h1>Pat's Salmon Cookies</h1>
+
+    <form id="new-store-form">
+
+      <fieldset>
+
+        <legend>New Location</legend>
+
+        <label for="location">Location</label>
+        <input type="location" type="text"/>
+
+        <label for="min-customers-hour">Min. Customers/hour</label>
+        <input type="min-customers-hour" type="text"/>
+
+        <label for="max-customers-hour">Max Customers/hour</label>
+        <input type="max-customers-hour" type="text"/>
+
+        <label for="cookies-per-sale">Avg. Cookies per Sale</label>
+        <input type="cookies-per-sale" type="text"/>
+
+        <button type="submit">Add Location</button>
+
+      </fieldset>
+
+    </form>
 
     <section>
 
