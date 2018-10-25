@@ -2,9 +2,21 @@ body {
   background-color: rgb(196, 120, 173);
 }
 
-#header-img {
+header {
   width: 960px;
-  height: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  margin: 15px;
+}
+
+#header-img {
+  width: 460px;
+  height: 300px;
+  margin-left: 250px;
 }
 
 h1 {
@@ -12,6 +24,19 @@ h1 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 200;
 }
-h2 {
-  text-align: center;
+
+#logo img {
+  width: 200px;
+  margin-left: 520px;
+}
+
+p img {
+  width: 300px;
+  height: 300px;
+}
+
+p {
+  display: inline-block;
+  width: 300px;
+
 }

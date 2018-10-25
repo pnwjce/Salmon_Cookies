@@ -2,9 +2,21 @@ body {
   background-color: rgb(196, 120, 173);
 }
 
-#header-img {
+header {
   width: 960px;
-  height: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  margin: 15px;
+}
+
+#header-img {
+  width: 460px;
+  height: 300px;
+  margin-left: 250px;
 }
 
 h1 {
@@ -13,6 +25,14 @@ h1 {
   font-weight: 200;
 }
 
+#logo img {
+  width: 200px;
+  margin-left: 520px;
+
+
+}
+
 h2 {
   text-align: center;
 }
+
